@@ -26,7 +26,7 @@ Then you can use the machine to:
 3.	Have Fun! You can have a chat with the machine, but with a characteristic, as you say phrases to it, 
 	the machine will assign more weight to your words, increasing the probability of repeating what you say.
 
-Talking machine is a command line tool but you can extract the class from the TM.php file and use it anywhere.
+Talking machine is a command line tool but you can extract the class from the b_machine.php file and use it anywhere.
 
 
 2	HOW TO TRAIN THE MACHINE
@@ -41,14 +41,14 @@ The more great it is the text best will be the training and the more rich the re
 
 Then, you must execute the command line:
 
->php TM.php –train TEXT_FILE_INPUT         STATS_FILE_OUTPUT
+>php b_machine.php –train TEXT_FILE_INPUT         STATS_FILE_OUTPUT
 
 
 
-where TEXT_FILE_INPUT is the text in any language, and STATS_FILE_OUTPUT is the result that TM will generate 
+where TEXT_FILE_INPUT is the text in any language, and STATS_FILE_OUTPUT is the result that b_machine will generate 
 (a text file with an associative PHP array with all the probabilities).
 
-Then, you will have file (like stats_computers_en.txt) that TM will use for its texts generation.
+Then, you will have file (like stats_computers_en.txt) that b_machine will use for its texts generation.
 
 If you want to use several text training files, you can use the merge option to add to a statistical file generated before,
 the training of a new text:
@@ -59,16 +59,16 @@ the training of a new text:
 3	GENERATING PASSWORDS
 
 
-At this point, you can use TM to generate an infinite number of passwords in order to being used, for example, with
+At this point, you can use b_machine to generate an infinite number of passwords in order to being used, for example, with
 John the Ripper.
 
 You can select the length of the passwords (8 by default) and the number of passwords (1000 by default).
 
-A good idea for this use is training TM with pre-existing dictionaries of passwords, by this way, you will generate infinite variations of known passwords and you will increase your possibilities of recover your lost password.
+A good idea for this use is training b_machine with pre-existing dictionaries of passwords, by this way, you will generate infinite variations of known passwords and you will increase your possibilities of recover your lost password.
 
 The command line is:
 
-<php TM.php –pass STATS_FILE    PASS_FILE_OUTPUT  [PASS LENGTH]    [NUMBER OF PASS]
+<php b_machine.php –pass STATS_FILE    PASS_FILE_OUTPUT  [PASS LENGTH]    [NUMBER OF PASS]
 
 
 where STATS_FILE is the statistical file you generated before with the –train option and PASS_FILE_OUTPUT the name you
@@ -133,10 +133,10 @@ With the –talk option, you can generate, in the language you want, this kind o
 All you can do is generate an statistical file (-train option) with the text in the idiom you want,
 and to use this command line:
 
->php TM.php –talk   STATS_FILE    TEXT_OUTPUT   [Nª WORDS]
+>php b_machine.php –talk   STATS_FILE    TEXT_OUTPUT   [Nª WORDS]
 
 
-where the TEXT_OUTPUT is the plain text file where TM will create its “speech”. The nº of words is by default 1000.
+where the TEXT_OUTPUT is the plain text file where b_machine will create its “speech”. The nº of words is by default 1000.
 
 Then you will have a paragraph like this:
 

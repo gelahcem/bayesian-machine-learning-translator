@@ -1,6 +1,6 @@
 <?php
 
-class talkingMachine
+class bayesinaMachine
 {
 	//config vars
 	var	$MAX_SYLLABLE = 5;
@@ -28,7 +28,7 @@ class talkingMachine
 	var	$argc;
 	var	$argv;
 
-	function talkingMachine( $_argc, $_argv)
+	function bayesinaMachine( $_argc, $_argv)
 	{
 		$this->argc = $_argc;
 		$this->argv = $_argv;
@@ -88,16 +88,16 @@ class talkingMachine
 	{
 		$txt = "Use:\n";
 		$txt .= "1.In order to train Bayesian Machine from a (plain) text file in any language:\n";
-		$txt .= ">php TM.php -train TRAINING_TEXT_FILE_INPUT STATS_FILE_OUTPUT [STATS_FILE_TO_MERGE]\n";
+		$txt .= ">php b_machine.php -train TRAINING_TEXT_FILE_INPUT STATS_FILE_OUTPUT [STATS_FILE_TO_MERGE]\n";
 		$txt .= "\n";
 		$txt .= "2.In order to make the machine to generate passwords from a file of statistics generated before:\n";
-		$txt .= ">php TM.php -pass STATS_FILE PASSWORDS_FILE_OUTPUT [PASSWORD LEGNTH=8] [NUMBER OF PASSWORDS=1000]\n";
+		$txt .= ">php b_machine.php -pass STATS_FILE PASSWORDS_FILE_OUTPUT [PASSWORD LEGNTH=8] [NUMBER OF PASSWORDS=1000]\n";
 		$txt .= "\n";
 		$txt .= "3.In order to make the machine to talk and to imitate a language:\n";
-		$txt .= ">php TM.php -talk STATS_FILE SPEECH_FILE_OUTPUT [NUMBER OF WORDS=1000]\n";
+		$txt .= ">php b_machine.php -talk STATS_FILE SPEECH_FILE_OUTPUT [NUMBER OF WORDS=1000]\n";
 		$txt .= "\n";
 		$txt .= "4.In order to have a chat with the machine:\n";
-		$txt .= ">php TM.php -dialog STATS_FILE";
+		$txt .= ">php b_machine.php -dialog STATS_FILE";
 		
 		return $txt;
 	}
@@ -611,6 +611,6 @@ class talkingMachine
 	}
 }
 
-$_ge = new  talkingMachine( $argc, $argv);
+$_ge = new  bayesinaMachine( $argc, $argv);
 
 ?>
